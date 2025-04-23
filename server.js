@@ -1,9 +1,10 @@
 const express = require('express');
 const mongoose = require('mongoose');
+require('dotenv').config();
 const app = express();
 
 // MongoDB connection setup
-mongoose.connect('mongodb+srv://Aniket-cyber8999:ns%40899909@cluster0.xxxxxx.mongodb.net/Book', {
+mongoose.connect(process.env.MONGODB_URI || 'your-mongodb-atlas-uri-here', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
