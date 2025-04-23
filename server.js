@@ -4,12 +4,12 @@ require('dotenv').config();
 const app = express();
 
 // MongoDB connection setup
-mongoose.connect(process.env.MONGODB_URI || 'your-mongodb-atlas-uri-here', {
+mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
-  .then(() => console.log('✅ MongoDB Atlas connected successfully!'))
-  .catch((err) => console.error('❌ MongoDB connection error:', err));
+  .then(() => console.log("MongoDB connected"))
+  .catch((err) => console.error("MongoDB connection error:", err));
 
 // JSON body parsing middleware
 app.use(express.json());
