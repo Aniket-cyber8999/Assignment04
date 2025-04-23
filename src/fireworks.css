@@ -1,0 +1,29 @@
+#fireworks {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  pointer-events: none;
+  perspective: 800px;
+  z-index: 9999;
+}
+
+.firework {
+  position: absolute;
+  width: 6px; height: 6px;
+  background: radial-gradient(circle, #ff3, #f00);
+  border-radius: 50%;
+  filter: drop-shadow(0 0 3px #ff0);
+  animation: explode 1s forwards;
+  transform-style: preserve-3d;
+}
+
+@keyframes explode {
+  0% {
+    opacity: 1;
+    transform: translate3d(0,0,0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(var(--x), var(--y), var(--z)) scale(0.3);
+  }
+}
