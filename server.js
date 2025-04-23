@@ -1,5 +1,14 @@
 const express = require('express');
+const mongoose = require('mongoose');
 const app = express();
+
+// MongoDB connection setup
+mongoose.connect('mongodb+srv://Aniket-cyber8999:ns%40899909@cluster0.xxxxxx.mongodb.net/Book', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
+  .then(() => console.log('✅ MongoDB Atlas connected successfully!'))
+  .catch((err) => console.error('❌ MongoDB connection error:', err));
 
 // JSON body parsing middleware
 app.use(express.json());
