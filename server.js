@@ -16,7 +16,7 @@ app.get('/api/books', (req, res) => {
 
 // Define route for root URL
 app.get('/', (req, res) => {
-  res.send('Backend server is running!');
+  res.send('Book Directory API is running 🚀');
 });
 
 // Start server
