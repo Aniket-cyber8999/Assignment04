@@ -14,6 +14,11 @@ app.get('/api/books', (req, res) => {
   res.json(books);
 });
 
+// Define route for root URL
+app.get('/', (req, res) => {
+  res.send('Backend server is running!');
+});
+
 // Start server
 const PORT = 5000;
 app.listen(PORT, () => {
